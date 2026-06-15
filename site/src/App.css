@@ -61,6 +61,22 @@
   display: flex;
   gap: 10px;
   font-size: 0.95rem;
-  color: inherit;
   flex-shrink: 0;
+  width: 52px;
+}
+
+.icone-pdf {
+  color: #e74c3c;
+}
+
+.icone-video {
+  color: #3b82f6;
+}
+
+.aula:not(.ativa) .icone-pdf {
+  color: #f5c6cb;
+}
+
+.aula:not(.ativa) .icone-video {
+  color: #b6d4fe;
 }

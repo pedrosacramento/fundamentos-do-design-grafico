@@ -35,12 +35,12 @@ function App() {
       <ul className="aulas">
         {aulas.map((aula) => (
           <li key={aula.numero} className={aula.ativa ? 'aula ativa' : 'aula'}>
+            <span className="aula-icones">
+              <i className="fa-solid fa-file-pdf icone-pdf"></i>
+              <i className="fa-solid fa-video icone-video"></i>
+            </span>
             <span className="aula-numero">Aula {aula.numero}</span>
             <span className="aula-titulo">{aula.titulo}</span>
-            <span className="aula-icones">
-              <i className="fa-solid fa-file-pdf"></i>
-              <i className="fa-solid fa-video"></i>
-            </span>
           </li>
         ))}
       </ul>
