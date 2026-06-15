@@ -54,4 +54,13 @@
 .aula-titulo {
   font-size: 0.95rem;
   color: inherit;
+  flex: 1;
+}
+
+.aula-icones {
+  display: flex;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: inherit;
+  flex-shrink: 0;
 }
