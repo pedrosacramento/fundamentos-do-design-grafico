@@ -1,7 +1,7 @@
 import './App.css'
 
 const aulas = [
-  { numero: '01', titulo: 'Introdução aos fundamentos do design gráfico e da comunicação visual', ativa: true },
+  { numero: '01', titulo: 'Apresentação da disciplina', ativa: true },
   { numero: '02', titulo: 'História e evolução do design', ativa: true },
   { numero: '03', titulo: 'Elementos da linguagem visual', ativa: false },
   { numero: '04', titulo: 'Princípios da linguagem visual', ativa: false },
