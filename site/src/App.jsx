@@ -2,7 +2,7 @@ import './App.css'
 
 const aulas = [
   { numero: '01', titulo: 'Apresentação da disciplina', ativa: true, video: 'https://www.youtube.com/watch?v=Tvq1--WC3uo' },
-  { numero: '02', titulo: 'História e evolução do design', ativa: true },
+  { numero: '02', titulo: 'História e evolução do design', ativa: true, semPdf: true, semVideo: true },
   { numero: '03', titulo: 'Elementos da linguagem visual', ativa: false },
   { numero: '04', titulo: 'Princípios da linguagem visual', ativa: false },
   { numero: '05', titulo: 'Teoria das cores', ativa: false },
@@ -36,11 +36,15 @@ function App() {
         {aulas.map((aula) => (
           <li key={aula.numero} className={aula.ativa ? 'aula ativa' : 'aula'}>
             <span className="aula-icones">
-              <a href={`pdf/${aula.numero}.pdf`} className="icone-link"><i className="fa-solid fa-file-pdf icone-pdf"></i></a>
-              {aula.video ? (
-                <a href={aula.video} className="icone-link" target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-video icone-video"></i></a>
-              ) : (
-                <i className="fa-solid fa-video icone-video"></i>
+              {!aula.semPdf && (
+                <a href={`pdf/${aula.numero}.pdf`} className="icone-link"><i className="fa-solid fa-file-pdf icone-pdf"></i></a>
+              )}
+              {!aula.semVideo && (
+                aula.video ? (
+                  <a href={aula.video} className="icone-link" target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-video icone-video"></i></a>
+                ) : (
+                  <i className="fa-solid fa-video icone-video"></i>
+                )
               )}
             </span>
             <span className="aula-numero">Aula {aula.numero}</span>
