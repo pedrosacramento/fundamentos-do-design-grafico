@@ -10,6 +10,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install LaTeX
+        run: sudo apt-get update && sudo apt-get install -y texlive-latex-base
+
+      - name: Create output directory
+        run: mkdir -p site/public/pdf
+
+      - name: Compile LaTeX files
+        run: |
+          for f in latex/*.tex; do
+            echo "Compilando $f..."
+            pdflatex -output-directory=site/public/pdf "$f"
+          done
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
