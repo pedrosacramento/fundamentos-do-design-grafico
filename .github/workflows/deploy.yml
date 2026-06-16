@@ -12,25 +12,19 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: dorny/paths-filter@v3
-        id: changes
-        with:
-          filters: |
-            latex:
-              - 'latex/**'
-
       - name: Install LaTeX
-        if: steps.changes.outputs.latex == 'true'
         run: sudo apt-get update && sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-lang-portuguese
 
       - name: Compile LaTeX files
-        if: steps.changes.outputs.latex == 'true'
         run: |
+          set -e
           mkdir -p site/public/pdf
           for f in latex/*.tex; do
             echo "Compilando $f..."
             pdflatex -output-directory=site/public/pdf "$f"
+            pdflatex -output-directory=site/public/pdf "$f"
           done
+          rm -f site/public/pdf/*.aux site/public/pdf/*.log site/public/pdf/*.out
 
       - uses: actions/setup-node@v4
         with:
