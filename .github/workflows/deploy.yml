@@ -9,13 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: dorny/paths-filter@v3
         id: changes
         with:
           filters: |
             latex:
-              - 'latex/**'
+              - 'latex/**.tex'
 
       - name: Install LaTeX
         if: steps.changes.outputs.latex == 'true'
