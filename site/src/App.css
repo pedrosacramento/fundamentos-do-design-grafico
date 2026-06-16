@@ -80,3 +80,9 @@
 .aula:not(.ativa) .icone-video {
   color: #b6d4fe;
 }
+
+.icone-link {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+}
