@@ -1,7 +1,7 @@
 import './App.css'
 
 const aulas = [
-  { numero: '01', titulo: 'Apresentação da disciplina', ativa: true },
+  { numero: '01', titulo: 'Apresentação da disciplina', ativa: true, video: 'https://www.youtube.com/watch?v=Tvq1--WC3uo' },
   { numero: '02', titulo: 'História e evolução do design', ativa: true },
   { numero: '03', titulo: 'Elementos da linguagem visual', ativa: false },
   { numero: '04', titulo: 'Princípios da linguagem visual', ativa: false },
@@ -37,7 +37,11 @@ function App() {
           <li key={aula.numero} className={aula.ativa ? 'aula ativa' : 'aula'}>
             <span className="aula-icones">
               <a href={`pdf/${aula.numero}.pdf`} className="icone-link"><i className="fa-solid fa-file-pdf icone-pdf"></i></a>
-              <i className="fa-solid fa-video icone-video"></i>
+              {aula.video ? (
+                <a href={aula.video} className="icone-link" target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-video icone-video"></i></a>
+              ) : (
+                <i className="fa-solid fa-video icone-video"></i>
+              )}
             </span>
             <span className="aula-numero">Aula {aula.numero}</span>
             <span className="aula-titulo">{aula.titulo}</span>
