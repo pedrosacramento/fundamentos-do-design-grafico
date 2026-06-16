@@ -81,6 +81,13 @@
   color: #b6d4fe;
 }
 
+.aula-data {
+  font-size: 0.8rem;
+  color: #888;
+  min-width: 72px;
+  flex-shrink: 0;
+}
+
 .icone-link {
   display: flex;
   text-decoration: none;
