@@ -36,7 +36,7 @@ function App() {
         {aulas.map((aula) => (
           <li key={aula.numero} className={aula.ativa ? 'aula ativa' : 'aula'}>
             <span className="aula-icones">
-              <a href={`${aula.numero}.pdf`} className="icone-link"><i className="fa-solid fa-file-pdf icone-pdf"></i></a>
+              <a href={`pdf/${aula.numero}.pdf`} className="icone-link"><i className="fa-solid fa-file-pdf icone-pdf"></i></a>
               <i className="fa-solid fa-video icone-video"></i>
             </span>
             <span className="aula-numero">Aula {aula.numero}</span>
