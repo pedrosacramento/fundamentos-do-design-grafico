@@ -10,14 +10,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: dorny/paths-filter@v3
+        id: changes
+        with:
+          filters: |
+            latex:
+              - 'latex/**.tex'
+
       - name: Install LaTeX
+        if: steps.changes.outputs.latex == 'true'
         run: sudo apt-get update && sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-lang-portuguese
 
-      - name: Create output directory
-        run: mkdir -p site/public/pdf
-
       - name: Compile LaTeX files
+        if: steps.changes.outputs.latex == 'true'
         run: |
+          mkdir -p site/public/pdf
           for f in latex/*.tex; do
             echo "Compilando $f..."
             pdflatex -output-directory=site/public/pdf "$f"
