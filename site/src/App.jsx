@@ -3,7 +3,7 @@ import './App.css'
 const aulas = [
   { numero: '01', titulo: 'Apresentação da disciplina', ativa: true, video: 'https://www.youtube.com/watch?v=Tvq1--WC3uo', data: '09/06/2026' },
   { numero: '02', titulo: 'História e evolução do design', ativa: true, data: '16/06/2026', video: 'https://www.youtube.com/watch?v=UYhBYu_yauU' },
-  { numero: '03', titulo: 'Teoria das cores', ativa: true, data: '23/06/2026' },
+  { numero: '03', titulo: 'Teoria das cores', ativa: true, data: '23/06/2026', video: 'https://www.youtube.com/watch?v=XqaUhMvjOFg' },
   { numero: '04', titulo: 'Design editorial: gráficos vetoriais versus raster', ativa: true, data: '30/06/2026' },
   { numero: '05', titulo: 'Elementos da linguagem visual', ativa: false },
   { numero: '06', titulo: 'Tipografia — classificação e anatomia', ativa: false },
