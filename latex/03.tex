@@ -1,0 +1,133 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{titlesec}
+
+\title{\textbf{Fundamentos do Design Gráfico}\\[4pt]\large Aula 03 --- Teoria da Cor}
+\author{Professor Pedro Sacramento}
+\date{23 de junho de 2026}
+
+\begin{document}
+
+\maketitle
+
+% ============================================
+\section{Introdução}
+
+A cor é um dos elementos mais poderosos da linguagem visual. Ela influencia a percepção, comunica significados, orienta a hierarquia da informação e desperta emoções. Para o designer gráfico, compreender a cor não é apenas uma questão de sensibilidade estética --- é uma necessidade técnica: saber como a cor funciona em diferentes meios (tela e papel) é o que garante que o resultado final corresponda ao que foi planejado.
+
+% ============================================
+\section{O que é cor}
+
+Cor é a \textbf{percepção visual} produzida pela luz quando esta atinge os olhos e é interpretada pelo cérebro. A luz visível é uma faixa do espectro eletromagnético --- ondas com comprimentos entre aproximadamente 380 e 750 nanômetros. Cada comprimento de onda corresponde a uma sensação cromática diferente: os menores produzem a sensação de violeta e azul; os maiores, de vermelho.
+
+\bigskip
+\noindent \textbf{Três elementos da cor:}
+
+\begin{itemize}[nosep]
+  \item \textbf{Matiz} (\textit{hue}) --- o que popularmente chamamos de ``cor'': vermelho, azul, amarelo etc. Corresponde ao comprimento de onda dominante.
+  \item \textbf{Saturação} (\textit{saturation}) --- a intensidade ou pureza da cor. Uma cor saturada é vibrante; uma cor dessaturada tende ao cinza.
+  \item \textbf{Luminosidade} (\textit{brightness / value}) --- o quão clara ou escura a cor é. Adicionar branco produz um \textit{tint}; adicionar preto produz um \textit{shade}.
+\end{itemize}
+
+% ============================================
+\section{Sistemas de cor}
+
+Há dois grandes sistemas de cor que o designer utiliza cotidianamente: o sistema \textbf{aditivo} (luz, RGB) e o sistema \textbf{subtrativo} (pigmento, CMYK). A diferença entre eles está no meio físico em que a cor é produzida.
+
+% ============================================
+\section{RGB --- Cor-luz / Sistema aditivo}
+
+O sistema RGB (do inglês \textit{Red, Green, Blue}) é o modelo usado em telas e dispositivos que emitem luz: monitores, celulares, projetores, televisores.
+
+\bigskip
+\noindent \textbf{Funcionamento:} parte do preto (ausência de luz). As cores são criadas pela \textbf{adição} de luz vermelha, verde e azul em diferentes intensidades.
+
+\begin{itemize}[nosep]
+  \item Vermelho + Verde = Amarelo
+  \item Verde + Azul = Ciano
+  \item Azul + Vermelho = Magenta
+  \item Vermelho + Verde + Azul (intensidade máxima) = Branco
+  \item Ausência de luz = Preto
+\end{itemize}
+
+\medskip
+\noindent \textbf{Uso:} qualquer projeto destinado a ser visualizado em tela --- sites, aplicativos, redes sociais, apresentações, vídeos.
+
+\medskip
+\noindent \textbf{Profundidade de cor:} no padrão de 8 bits por canal, cada componente (R, G e B) assume valores de 0 a 255, totalizando mais de 16,7 milhões de combinações possíveis. No design para web, essas cores são representadas em hexadecimal (ex.: \texttt{\#FF5733}).
+
+% ============================================
+\section{CMYK --- Cor-pigmento / Sistema subtrativo}
+
+O sistema CMYK (do inglês \textit{Cyan, Magenta, Yellow, Key/Black}) é o modelo usado em impressão. Tintas e pigmentos não emitem luz --- eles \textbf{absorvem} (subtraem) determinados comprimentos de onda e refletem outros.
+
+\bigskip
+\noindent \textbf{Funcionamento:} parte do branco (papel em branco). As cores são criadas pela \textbf{subtração} --- cada tinta depositada sobre o papel absorve parte da luz que incide sobre ela.
+
+\begin{itemize}[nosep]
+  \item Ciano absorve o vermelho
+  \item Magenta absorve o verde
+  \item Amarelo absorve o azul
+  \item Preto (K) --- teoricamente C+M+Y produziria preto, mas na prática a mistura gera um tom marrom-escuro; por isso adiciona-se o preto puro para profundidade e economia de tinta.
+\end{itemize}
+
+\medskip
+\noindent \textbf{Uso:} qualquer projeto destinado à impressão --- cartazes, cartões de visita, embalagens, revistas, livros.
+
+% ============================================
+\section{RGB vs. CMYK na prática}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{Critério} & \textbf{RGB (aditivo)} & \textbf{CMYK (subtrativo)} \\
+\hline
+Meio & Telas, luz emitida & Papel, tinta, pigmento \\
+\hline
+Cores primárias & Vermelho, Verde, Azul & Ciano, Magenta, Amarelo \\
+\hline
+Ponto de partida & Preto (sem luz) & Branco (papel) \\
+\hline
+Mistura das primárias & Produz branco & Produz preto (teórico) \\
+\hline
+Gama de cores & Maior (cores mais vibrantes) & Menor (limitada pela tinta) \\
+\hline
+Aplicação & Web, vídeo, UI, redes sociais & Material impresso \\
+\hline
+\end{tabular}
+\end{center}
+
+\bigskip
+\noindent Um erro comum entre iniciantes: criar um projeto em RGB, imprimir e perceber que as cores ficaram opacas. Isso ocorre porque a gama do RGB contém cores que simplesmente não podem ser reproduzidas com tinta. Sempre que o destino for impresso, \textbf{trabalhe em CMYK desde o início}.
+
+% ============================================
+\section{Exercício}
+
+\subsection*{Objetivo}
+Pesquisar sobre teoria de cores, criar uma paleta cromática e aplicá-la em um logotipo, desenvolvendo sensibilidade para a escolha e combinação de cores.
+
+\subsection*{Dinâmica}
+\begin{enumerate}[nosep]
+  \item \textbf{Pesquise} sobre teoria de cores. Explore conceitos como:
+  \begin{itemize}[nosep]
+    \item Círculo cromático
+    \item Cores primárias, secundárias e terciárias
+    \item Cores complementares, análogas e triádicas
+    \item Cores quentes e frias
+    \item Psicologia das cores (associações culturais e emocionais)
+  \end{itemize}
+  \item \textbf{Crie uma paleta} de 3 a 5 cores, definindo uma cor dominante e as demais como apoio. Registre os valores em RGB e hexadecimal.
+  \item \textbf{Aplique a paleta} em um logotipo --- pode ser um que você já tenha criado nos exercícios anteriores ou um novo.
+  \item \textbf{Publique} o resultado (paleta + logo) no grupo do WhatsApp da turma, com um breve comentário sobre as escolhas cromáticas que você fez.
+\end{enumerate}
+
+% Fim da Aula 03
+
+\end{document}

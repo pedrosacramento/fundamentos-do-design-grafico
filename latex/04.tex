@@ -1,0 +1,131 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{titlesec}
+
+\title{\textbf{Fundamentos do Design Gráfico}\\[4pt]\large Aula 04 --- Gráficos Vetoriais versus Raster}
+\author{Professor Pedro Sacramento}
+\date{30 de junho de 2026}
+
+\begin{document}
+
+\maketitle
+
+% ============================================
+\section{Introdução}
+
+Toda imagem digital pertence a uma de duas categorias fundamentais: \textbf{raster} (ou bitmap) ou \textbf{vetorial}. Compreender a diferença entre elas é essencial para o designer gráfico, pois cada categoria tem princípios de funcionamento, aplicações ideais e limitações específicas. A escolha errada pode comprometer desde a qualidade de uma impressão até o peso de um arquivo para a web.
+
+% ============================================
+\section{Gráficos raster}
+
+Um gráfico raster é composto por uma \textbf{grade retangular de pixels} --- pequenos quadrados coloridos que, vistos em conjunto, formam a imagem. Cada pixel possui uma cor e uma posição fixa na grade.
+
+\bigskip
+\noindent \textbf{Características principais:}
+
+\begin{itemize}[nosep]
+  \item \textbf{Resolução fixa:} a qualidade da imagem é determinada pelo número de pixels por polegada (PPI, \textit{pixels per inch}) ou pontos por polegada (DPI, \textit{dots per inch}) na impressão.
+  \item \textbf{Pixelização:} ao ampliar uma imagem raster além de sua resolução original, os pixels tornam-se visíveis e as bordas adquirem um aspecto serrilhado.
+  \item \textbf{Riqueza de detalhes:} ideal para imagens com gradações tonais complexas, texturas naturais e variações sutis de cor.
+\end{itemize}
+
+\medskip
+\noindent \textbf{Formatos comuns:}
+
+\begin{itemize}[nosep]
+  \item \textbf{JPEG} --- compressão com perda, adequado para fotografias na web.
+  \item \textbf{PNG} --- compressão sem perda, suporta transparência.
+  \item \textbf{GIF} --- paleta limitada a 256 cores, suporta animação simples.
+  \item \textbf{TIFF} --- alta qualidade, usado em fluxos de impressão profissional.
+  \item \textbf{PSD} --- formato nativo do Adobe Photoshop, preserva camadas.
+\end{itemize}
+
+\medskip
+\noindent \textbf{Uso típico:} fotografias, texturas, imagens com degradês complexos, arte digital pintada à mão, qualquer imagem capturada por câmera ou scanner.
+
+% ============================================
+\section{Gráficos vetoriais}
+
+Um gráfico vetorial é construído a partir de \textbf{equações matemáticas} que descrevem formas geométricas: pontos, linhas, curvas (curvas de Bézier), círculos e polígonos. A imagem é calculada em tempo real cada vez que é exibida.
+
+\bigskip
+\noindent \textbf{Características principais:}
+
+\begin{itemize}[nosep]
+  \item \textbf{Escalabilidade infinita:} como a imagem é definida por fórmulas matemáticas, pode ser redimensionada para qualquer tamanho sem perda de qualidade ou aumento no tamanho do arquivo.
+  \item \textbf{Arquivos leves:} para formas simples, o arquivo vetorial costuma ser menor que seu equivalente raster.
+  \item \textbf{Edição não destrutiva:} cada elemento (forma, cor, traçado) permanece editável individualmente.
+  \item \textbf{Limitação fotográfica:} não é adequado para imagens com variações tonais contínuas, como fotografias.
+\end{itemize}
+
+\medskip
+\noindent \textbf{Formatos comuns:}
+
+\begin{itemize}[nosep]
+  \item \textbf{SVG} --- padrão aberto para a web, baseado em XML.
+  \item \textbf{EPS} --- formato de intercâmbio profissional, compatível com diversos softwares.
+  \item \textbf{AI} --- formato nativo do Adobe Illustrator.
+  \item \textbf{PDF} --- pode conter tanto elementos vetoriais quanto raster.
+\end{itemize}
+
+\medskip
+\noindent \textbf{Uso típico:} logotipos, ícones, tipografia, ilustrações técnicas, sinalização, padrões geométricos, qualquer arte que precise ser reproduzida em múltiplos tamanhos.
+
+% ============================================
+\section{Comparação}
+
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|}
+\hline
+\textbf{Critério} & \textbf{Raster} & \textbf{Vetorial} \\
+\hline
+Escalabilidade & Perde qualidade ao ampliar & Escala infinita sem perda \\
+\hline
+Tamanho de arquivo & Grande em alta resolução & Pequeno para formas simples \\
+\hline
+Fidelidade fotográfica & Excelente & Inadequado \\
+\hline
+Edição de elementos & Difícil isolar partes após achatamento & Cada elemento permanece editável \\
+\hline
+Formatos típicos & JPEG, PNG, TIFF, PSD & SVG, EPS, AI, PDF \\
+\hline
+Softwares & Photoshop, GIMP, Krita, Lightroom & Illustrator, Inkscape, CorelDRAW, Figma \\
+\hline
+Aplicação ideal & Fotos, texturas, arte digital pintada & Logos, ícones, tipografia, ilustração técnica \\
+\hline
+\end{tabular}
+\end{center}
+
+% ============================================
+\section{Exercício}
+
+\subsection*{Objetivo}
+Vetorizar um logotipo utilizando o software Inkscape, compreendendo na prática a diferença entre os formatos raster e vetorial.
+
+\subsection*{Dinâmica}
+\begin{enumerate}[nosep]
+  \item Escolha um logotipo simples de sua preferência (pode ser de uma marca conhecida ou um que você tenha criado no Exercício da Aula 01).
+  \item \textbf{Parte A --- Raster:} salve ou exporte uma versão do logotipo como JPEG ou PNG em baixa resolução (ex.: 200$\times$200 pixels). Amplie a imagem para o dobro do tamanho e observe o que acontece com a qualidade.
+  \item \textbf{Parte B --- Vetorial:} utilizando o Inkscape (software gratuito disponível em \url{https://inkscape.org/}), redesenhe o logotipo com formas geométricas e curvas de Bézier. Salve como SVG. Amplie e reduza o arquivo --- observe que a qualidade se mantém idêntica em qualquer tamanho.
+  \item Escreva um breve parágrafo (5 a 8 linhas) comparando sua experiência com os dois formatos: pontos positivos e negativos de cada um, e em quais situações você escolheria um ou outro.
+\end{enumerate}
+
+% ============================================
+\section{Referências}
+
+\begin{itemize}[nosep]
+  \item Livro-texto aberto: \href{https://opentextbc.ca/graphicdesign/}{Graphic Design and Print Production Fundamentals} --- Capítulos sobre imagem digital (OpenTextBC, licença Creative Commons)
+  \item Documentação SVG: \href{https://developer.mozilla.org/pt-BR/docs/Web/SVG}{MDN Web Docs --- SVG}
+  \item Inkscape (editor vetorial gratuito): \href{https://inkscape.org/}{https://inkscape.org/}
+\end{itemize}
+
+% Fim da Aula 04
+
+\end{document}
